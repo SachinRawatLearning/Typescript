@@ -32,7 +32,3 @@ function isLeapYear(year: number): boolean {
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) leap = true;
   return leap;
 }
-
-const abc = (person: { first: string; last: string; desc: number }) => {};
-
-abc({ first: "asd", last: "sdsd", desc: 23 });
