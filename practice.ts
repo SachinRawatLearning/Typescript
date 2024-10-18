@@ -48,3 +48,23 @@ const board: string[][] = [
 ];
 
 const demo: number[][][] = [[[3, 34]]];
+
+//Union Types
+
+let age: number | string = 23;
+age = "string";
+//age = false; // throws error
+
+const arr1: (string | number)[] = [2, 3, "sda"];
+
+//Literal Types
+
+let zero: 0 = 0;
+//zero = 2 //Error
+
+//Union and Literal Types Together
+
+let Moods: "Happy" | "Sad" | "Angry" = "Happy";
+Moods = "Sad";
+Moods = "Angry";
+//Moods = "Glow"; //Error
