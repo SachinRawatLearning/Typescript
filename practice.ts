@@ -68,3 +68,38 @@ let Moods: "Happy" | "Sad" | "Angry" = "Happy";
 Moods = "Sad";
 Moods = "Angry";
 //Moods = "Glow"; //Error
+
+//Tuples
+const myTuple: [number, number, number] = [2, 3, 4];
+//const a: [number, string] = [2, "asd", 3]; //not allowed as tuple will have fixed length
+//const b: [number, string] = ["avc", 23]; // not allowed as elements are type checked
+
+type HTTPResponse = [number, string];
+
+const goodResponse: HTTPResponse = [200, "OK"];
+const badResponse: HTTPResponse = [400, "Network Error"];
+const responses: HTTPResponse[] = [[404, "Not Found"]];
+const someTuple: readonly [string, number] = ["abc", 23];
+//someTuple.push(23);// not allowed
+
+//Enums
+enum Responses {
+  No, //0 By default
+  Yes, //1
+  Maybe = 23,
+}
+
+const myResponse = Responses.Yes;
+
+//Interfaces
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+const printName = (person: Person) => {
+  console.log(person);
+};
+
+printName({ name: "John Cena", age: 44 });
