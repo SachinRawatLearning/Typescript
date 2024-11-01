@@ -103,3 +103,96 @@ const printName = (person: Person) => {
 };
 
 printName({ name: "John Cena", age: 44 });
+
+//readonly and optional interface properties
+interface Person1 {
+  readonly id: number;
+  first: string;
+  nickname?: string;
+}
+
+const person1: Person1 = { id: 23, first: "John" };
+person1.first = "Sam";
+//person1.id = 33; //Error as it's readonly
+
+//Interface Methods
+interface Person2 {
+  readonly name: string;
+  nickname?: string;
+  greet: () => string;
+}
+
+const person2: Person2 = {
+  name: "abc",
+  greet: () => {
+    return "Hello";
+  },
+};
+
+//Interface methods with parameters
+interface Product {
+  product: string;
+  getDiscount: (discount: number) => number;
+}
+
+const shoes: Product = {
+  product: "Red Tape",
+  getDiscount: (amount: number) => {
+    return 23;
+  },
+};
+
+shoes.getDiscount(55); //23
+
+//Reopening Interfaces
+interface Dog {
+  name: string;
+  age: number;
+}
+
+interface Dog {
+  breed: string;
+  bark(): string;
+}
+
+const jerry: Dog = {
+  name: "Jerry",
+  age: 6,
+  breed: "labradore",
+  bark: () => {
+    return "Bow Bow";
+  },
+};
+
+//Extending Interfaces
+interface ServiceDog extends Dog {
+  job: "drug sniffer" | "guide dog" | "bomb";
+}
+
+const tom: ServiceDog = {
+  job: "guide dog",
+  name: "tom",
+  age: 5,
+  breed: "German Shephard",
+  bark() {
+    return "Bark!";
+  },
+};
+
+//Interface Multiple Inheritance
+interface Employee {
+  readonly id: number;
+}
+
+interface Engineer extends Person, Employee {
+  role: string;
+  languages: string[];
+}
+
+const tobey: Engineer = {
+  id: 23560,
+  name: "Tobey",
+  age: 25,
+  role: "Software Developer",
+  languages: ["Reactjs", "Javascript"],
+};
