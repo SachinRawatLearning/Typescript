@@ -130,12 +130,12 @@ const person2: Person2 = {
 };
 
 //Interface methods with parameters
-interface Product {
+interface Shoe {
   product: string;
   getDiscount: (discount: number) => number;
 }
 
-const shoes: Product = {
+const shoes: Shoe = {
   product: "Red Tape",
   getDiscount: (amount: number) => {
     return 23;
